@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/assets/css/loginStyle.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+
+
+@using (Html.BeginForm("Login", "Customers"))
+{
+    @Html.ValidationSummary(true)
+    <div class="login-area">
+        <div class="login-form">
+            <div class="form-header">
+                <h2 style="font-weight:400">Đăng nhập</h2>
+                <div class="social-log">
+                    <div class="fb-log">
+                        <div class="left-items">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div class="right-items">
+                            <p>Facebook</p>
+                        </div>
+                    </div>
+                    <div class="gmail-log">
+                        <div class="left-items">
+                            <i class="fa-brands fa-google-plus-g"></i>
+                        </div>
+                        <div class="right-items">
+                            <p>Google</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <form name="form" id="login-form" method="get">
+                    <input type="email" name="CusEmail" id="email-login" placeholder="Email" maxlength="50" required />
+                    <input type="password" name="CusPassword" id="password-login" placeholder="Mật khẩu" maxlength="50" required />
+                    <button type="submit" name="submit" id="submit">Đăng nhập</button>
+                </form>
+            </div>
+            <div class="form-footer">
+                <p>Bạn chưa có tài khoản, vui lòng đăng ký <span><a href="~/Customers/Register">tại đây</a></span></p>
+            </div>
+        </div>
+    </div>
+}
+<h4 style="color: red; text-align: center">@ViewBag.ThongBao</h4>
+
+

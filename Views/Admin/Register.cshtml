@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+
+<div style="margin: 10px auto; width: 70%;">
+    <h2 style="text-align: center">ĐĂNG KÍ TÀI KHOẢN QUẢN TRỊ</h2>
+    <h2 style="color: red;">@ViewBag.ThongBao</h2>
+    @using (Html.BeginForm("Register", "Admin"))
+    {
+        @Html.ValidationSummary(true)
+        <div class="mb-3 mt-3">
+            <label for="name" class="form-label">TÊN:</label>
+            <input type="text" class="form-control" id="name"
+                   name="Username" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="pwd" class="form-label">PASSWORD:</label>
+            <input type="password" class="form-control" id="pwd"
+                   name="Password" required>
+        </div>
+        <div class="mb-3">
+            <label for="cfpwd" class="form-label">Confirm PASSWORD:</label>
+            <input type="password" class="form-control" id="cfpwd"
+                   name="ConfirmPassword" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">XÁC NHẬN</button>
+    }
+</div>
+
+<script src="~/Content/assets/scripts/adminregister.js"></script>
+

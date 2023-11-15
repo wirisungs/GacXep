@@ -1,0 +1,149 @@
+﻿@using GacXep.Models
+@model List<CartItem>
+
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Content/assets/css/cartstyle.css" />
+@foreach (var product in Model)
+{
+    <div class="main container hidden-xs snipcss-FWFGr">
+        <div class="header-cart">
+            <h1 class="title_cart">
+                <span>
+                    Giỏ hàng của bạn
+                </span>
+            </h1>
+            <div class="header-cart title_cart_pc hidden-sm hidden-xs">
+            </div>
+        </div>
+        <div class="col-main cart_desktop_page cart-page">
+            <div class="cart page_cart hidden-xs">
+                <form action="/cart" method="post" novalidate="" class="margin-bottom-0">
+                    <div class="bg-scroll">
+                        <div class="cart-thead">
+                            <div style="width: 6%" class="a-center">
+                            </div>
+                            <div id="style-ep1Oo" class="style-ep1Oo">
+                                Sản phẩm
+                            </div>
+                            <div id="style-Od7xn" class="style-Od7xn">
+                            </div>
+                            <div style="width: 21%" class="a-center">
+                                <span class="nobr">
+                                    Giá
+                                </span>
+                            </div>
+                            <div style="width: 16%" class="a-center">
+                                Số lượng
+                            </div>
+                            <div class="a-center style-oCdOW" id="style-oCdOW">
+                                Thành tiền
+                            </div>
+                        </div>
+                        <div class="cart-tbody">
+                            <div class="item-cart productid-102129853">
+                                <div style="width: 6%" class="a-right cart5">
+                                    <a class="button remove-item remove-item-cart" title="Xóa" href="javascript:;" data-id="102129853">
+                                        <span>
+                                            <i class="fas fa-times">
+                                            </i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div style="width: 10%" class="image cart1">
+                                    <a class="product-image" title="The Devil of Nanking - New / Paperback" href="/the-devil-of-nanking-1">
+                                        <img width="120" height="auto" alt="Title" src="@Url.Content(product.ProImage)">
+                                    </a>
+                                </div>
+                                <div class="a-center cart2 style-pEZhW" id="style-pEZhW">
+                                    <h2 class="product-name" title="The Devil of Nanking">
+                                        <a href="@product.ProName">
+                                            @product.ProName
+                                        </a>
+                                    </h2>
+                                    <div id="style-zsUYG" class="style-zsUYG">
+                                    </div>
+                                </div>
+                                <div style="width: 19%" class="a-center">
+                                    <span class="item-price">
+                                        <span class="price pricechange">
+                                            @product.Price VNĐ
+                                        </span>
+                                    </span>
+                                </div>
+                                <div style="width: 19%" class="a-center">
+                                    <div class="input_qty_pr relative ">
+                                        <input class="variantID" type="hidden" name="variantId" value="@product.Quantity">
+                                        <button onclick="var result = document.getElementById('qtyItem102129853'); var qtyItem102129853 = result.value; if( !isNaN( qtyItem102129853 ) &amp;&amp; qtyItem102129853 > 1 ) result.value--;return false;" disabled="" class="reduced_pop items-count btn-minus" type="button">
+                                            <i class="fas fa-caret-down">
+                                            </i>
+                                        </button>
+                                        <input type="text" maxlength="3" min="0" class="input-text number-sidebar input_pop input_pop qtyItem102129853" id="qtyItem102129853" name="Lines" size="4" value="@product.Quantity">
+                                        <button onclick="var result = document.getElementById('qtyItem102129853'); var qtyItem102129853 = result.value; if( !isNaN( qtyItem102129853 )) result.value++;return false;" class="increase_pop items-count btn-plus" type="button">
+                                            <i class="fas fa-caret-up">
+                                            </i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="a-center cart6 style-9t2gk" id="style-9t2gk">
+                                    <span class="cart-price">
+                                        <span class="price">
+                                            @product.FinalPrice() VNĐ
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="cart-collaterals cart_submit row">
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <div class="totals">
+                            <div class="inner">
+                                <table class="table shopping-cart-table-total margin-bottom-0" id="shopping-cart-totals-table">
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="20" class="a-right">
+                                            </td>
+                                            <td class="a-right">
+                                                <span class="total_tt">
+                                                    Tổng số thành tiền:
+                                                </span>
+                                                <strong>
+                                                    <span class="totals_price price">
+                                                        @product.FinalPrice() VNĐ
+                                                    </span>
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <ul class="checkout">
+                                    <li class="clearfix">
+                                        <button class="btn btn-primary button button_gradient btn-proceed-checkout f-right" title="Tiến hành thanh toán" type="button">
+                                            @Html.ActionLink("Tiến hành thanh toán", "ConfirmCart")
+                                        </button>
+                                        <button class="btn btn-gray margin-right-15 f-right" title="Tiếp tục mua hàng" type="button" href="~/CustomerBooks/Index">
+                                            
+                                            @Html.ActionLink("Tiếp tục mua hàng", "Index", "CustomerBooks")
+                                            
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,406 @@
+﻿@font-face {
+    font-family: 'Product Sans';
+    src: url("http://127.0.0.1:3000/100/364/248/themes/736344/assets/product-san.ttf");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.eot);
+    src: url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2) format("woff2"),url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff) format("woff"),url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.ttf) format("truetype"),url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.svg#fontawesome) format("svg");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.eot);
+    src: url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2) format("woff2"),url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff) format("woff"),url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.ttf) format("truetype"),url(https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.svg#fontawesome) format("svg");
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('https://productreviews.sapoapps.vn/assets/libs/font-awesome/fonts/fontawesome-webfont.eot?v=4.6.0');
+    src: url('https://productreviews.sapoapps.vn/assets/libs/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.6.0') format('embedded-opentype'),url('https://productreviews.sapoapps.vn/assets/libs/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.0') format('woff2'),url('https://productreviews.sapoapps.vn/assets/libs/font-awesome/fonts/fontawesome-webfont.woff?v=4.6.0') format('woff'),url('https://productreviews.sapoapps.vn/assets/libs/font-awesome/fonts/fontawesome-webfont.ttf?v=4.6.0') format('truetype'),url('https://productreviews.sapoapps.vn/assets/libs/font-awesome/fonts/fontawesome-webfont.svg?v=4.6.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 10px;
+    line-height: 1.7;
+    color: #252525;
+    background: #fff;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    line-height: 1.7;
+    font-family: "Product Sans";
+    color: #252525;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-size: 15px;
+    color: #252525;
+    overflow-x: hidden;
+}
+
+body {
+    background: #fff;
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+.margin-bottom-40 {
+    margin-bottom: 40px !important;
+}
+
+.breadcrumb_background {
+    background-image: url(http://127.0.0.1:3000/100/364/248/themes/736344/assets/bg_breadcrumb.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    float: left;
+    padding: 60px 0 80px 0;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+}
+
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, input, :before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, :after, :before {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.title_full {
+    width: 100%;
+    float: left;
+    text-align: left;
+}
+
+section {
+    display: block;
+}
+
+.bread-crumb {
+    background: transparent;
+    margin-bottom: 0px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.a-center {
+    text-align: center !important;
+}
+
+.btn-group-vertical > .btn-group::after, .btn-group-vertical > .btn-group::before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd::after, .dl-horizontal dd::before, .form-horizontal .form-group::after, .form-horizontal .form-group::before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " ";
+}
+
+.btn-group-vertical > .btn-group::after, .btn-group-vertical > .btn-group::before, .btn-toolbar::after, .btn-toolbar::before, .clearfix::after, .clearfix::before, .container-fluid::after, .container-fluid::before, .container::after, .container::before, .dl-horizontal dd::after, .dl-horizontal dd::before, .form-horizontal .form-group::after, .form-horizontal .form-group::before, .modal-footer::after, .modal-footer::before, .modal-header::after, .modal-header::before, .nav::after, .nav::before, .navbar-collapse::after, .navbar-collapse::before, .navbar-header::after, .navbar-header::before, .navbar::after, .navbar::before, .pager::after, .pager::before, .panel-body::after, .panel-body::before, .row::after, .row::before {
+    display: table;
+    content: " ";
+}
+
+.btn-group-vertical > .btn-group::after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd::after, .form-horizontal .form-group::after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+    clear: both;
+}
+
+.btn-group-vertical > .btn-group::after, .btn-toolbar::after, .clearfix::after, .container-fluid::after, .container::after, .dl-horizontal dd::after, .form-horizontal .form-group::after, .modal-footer::after, .modal-header::after, .nav::after, .navbar-collapse::after, .navbar-header::after, .navbar::after, .pager::after, .panel-body::after, .row::after {
+    clear: both;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+p {
+    margin: 0 0 15px 0;
+}
+
+.title_full .title_page {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    font-family: "Product Sans";
+    color: #fff;
+    margin: 0;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-xs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-12 {
+    float: left;
+}
+
+.col-xs-12 {
+    width: 100%;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none outside;
+}
+
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.breadcrumb {
+    font-family: "Product Sans";
+    margin: 0;
+    font-size: 14px;
+    padding: 0px;
+    border-radius: 0;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+}
+
+    .breadcrumb > li {
+        display: inline-block;
+    }
+
+    .breadcrumb li {
+        display: inline;
+        font-size: 15px;
+    }
+
+    .breadcrumb > li + li::before {
+        padding: 0 5px;
+        color: #ccc;
+        content: "/\00a0";
+    }
+
+    .breadcrumb > li + li::before {
+        display: none;
+    }
+
+a {
+    background-color: transparent;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a {
+    color: #252525;
+}
+
+a {
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+a {
+    color: #252525;
+    text-decoration: none;
+    background: transparent;
+}
+
+.breadcrumb li > a {
+    color: #fff;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+a:hover {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #498374;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.breadcrumb li a:hover {
+    color: #498374;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.breadcrumb li span {
+    display: inline;
+    color: #fff;
+}
+
+.breadcrumb li .mr_lr {
+    padding: 0px;
+    color: #fff;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.breadcrumb li a:hover, .breadcrumb li.active, .breadcrumb li strong {
+    color: #498374;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.breadcrumb li > a > span {
+    color: #fff;
+}
+
+.breadcrumb li a:hover span {
+    color: #fff;
+}
+
+.fa {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.fa {
+    font-family: "Font Awesome 5 Free";
+}
+
+.fa {
+    font-weight: 900;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.breadcrumb li span .fa {
+    color: #fff;
+    padding: 0px 5px;
+}
+
+.fa-angle-right:before {
+    content: "\f105";
+}
+
+.breadcrumb li a:hover span, .breadcrumb li.active span, .breadcrumb li strong span {
+    color: #fff;
+}

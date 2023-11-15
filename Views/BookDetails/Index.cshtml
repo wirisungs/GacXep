@@ -1,0 +1,85 @@
+﻿@model IEnumerable<GacXep.Models.BookDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>QUẢN LÝ KHO HÀNG</h2>
+<hr />
+
+<table class="table">
+    <tr>
+        <th>
+            SẢN PHẨM
+        </th>
+        <th>
+            NHÀ XUẤT BẢN
+        </th>
+        <th>
+            TÁC GIẢ
+        </th>
+        <th>
+            SỐ TRANG
+        </th>
+        <th>
+            NGÔN NGỮ
+        </th>
+        <th>
+            ĐƠN GIÁ
+        </th>
+        <th>
+            SỐ LƯỢNG TỒN
+        </th>
+        <th>
+            SỐ LƯỢNG ĐÃ BÁN
+        </th>
+        <th>
+            SỐ LƯỢT XEM
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book.ProName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher.PubName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.AuthorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RemainQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoldQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewQuantity)
+            </td>
+
+            <td>
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.ProDeID }, new { @class = "btn btn-sm btn-info" }) |
+                @Html.ActionLink("Sửa", "Edit", new { id = item.ProDeID }, new { @class = "btn btn-sm btn-success" }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.ProDeID }, new { @class = "btn btn-sm btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary" })
+</p>

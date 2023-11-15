@@ -1,0 +1,45 @@
+﻿@model GacXep.Models.Book
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .ProImg {
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    img {
+        opacity: 0.99;
+        vertical-align: middle;
+    }
+</style>
+
+<h2>QUẢN LÝ THÔNG TIN SẢN PHẨM</h2>
+<h3 class="text-danger bg-warning">Bạn thực sự muốn xóa?</h3>
+<hr />
+
+@Html.Partial("ProInfoPartial", Model)
+
+@*@Html.RenderAction("RemainStockPartial", "ProDetails", new { id = Model.ProID })*@
+
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="text-align: center">
+            <input type="submit" value="Xóa" class="btn btn-primary" />
+            @Html.ActionLink("Danh sách", "Index", null, new { @class = "btn btn-info" })
+            @Html.ActionLink("Chi tiết hàng tồn", "Index", "ProDetails", new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>

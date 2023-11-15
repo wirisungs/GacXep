@@ -1,0 +1,83 @@
+﻿
+@using GacXep.Models
+@model List<CartItem>
+@{
+    ViewBag.Title = "ConfirmCart";
+    Layout = null;
+    Customer customer = Session["TaiKhoan"] as Customer;
+}
+
+<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+<h2 style="text-align:center">THANH TOÁN</h2>
+<table class="table table-bordered" style="text-align: center;">
+    <thead>
+        <tr>
+            
+            <th align="center">TÊN SẢN PHẨM</th>
+            <th align="center">ẢNH</th>
+            <th align="center">SỐ LƯỢNG</th>
+            <th align="center">ĐƠN GIÁ</th>
+            <th align="center">THÀNH TIỀN</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                
+                <td>@product.ProName</td>
+                <td><img src="@Url.Content(product.ProImage)" style="width:100px" /></td>
+                <td>@product.Quantity</td>
+                <td>@String.Format("{0:0,0}", product.Price) VNĐ</td>
+                <td>@String.Format("{0:0,0}", product.FinalPrice()) VNĐ</td>
+            </tr>
+        }
+        <tr style="font-weight:bold; text-align:right; color:red;">
+            <td colspan="4">Tổng số lượng: @ViewBag.TotalNumber</td>
+            <td colspan="5">Tổng tiền: @ViewBag.TotalPrice VNĐ</td>
+        </tr>
+    </tbody>
+
+</table>
+
+
+<tr>
+    <td>
+        @using (Html.BeginForm("AgreeCart", "Cart"))
+        {
+            <table class="table table-bordered" style="text-align: center;">
+                <tr>
+                    <td>
+                        Họ tên khách hàng:
+                    </td>
+                    <td>@customer.CusName</td>
+                </tr>
+                <tr>
+                    <td>
+                        Số điện thoại khách hàng:
+                    </td>
+                    <td>@customer.CusPhone</td>
+                </tr>
+                <tr>
+                    <td>
+                        Ngày đặt hàng:
+                    </td>
+                    <td>@DateTime.Now.ToShortDateString()</td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ giao hàng</td>
+                    <td>
+                        <input type="text" name="AddressDeliverry" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input class="btn btn-outline-info" type="submit" value="Thanh toán"/>
+                    </td>
+                </tr>
+            </table>
+        }
+    </td>
+</tr>
+
+

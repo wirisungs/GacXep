@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="//bizweb.dktcdn.net/100/364/248/themes/736344/assets/favicon.png?1685433925349" type="image/x-icon">
+    <link rel="stylesheet" href="~/Content/assets/css/mainlayout.css" />
+</head>
+<body>
+
+    <!--HEADER ADMIN-->
+
+    <div class="mid-header wid_100">
+        <div class="container">
+            <div class="row">
+                <div class="content_header ">
+                    <div class="header-main">
+                        <div class="col-lg-2 col-md-2">
+                            <div class="logo logo_centers">
+                                <a href="/home/TrangChu" class="logo-wrapper" title="Gác Xép Bookstore">
+                                    <img src="https://bizweb.dktcdn.net/100/364/248/themes/736344/assets/logo.png?1685433925349" alt="logo Gác Xép Bookstore">
+                                </a>
+                            </div>
+                        </div>
+                        @*<div class="col-lg-6 col-md-6">
+                            <div class="header_search header_searchs search_new">
+                                <form action="/search" method="get" class="input-group search-bar hidden-sm hidden-xs" role="search">
+                                    <input type="hidden" name="type" value="product">
+                                    <input type="search" name="query" value="" placeholder="Nhập từ khóa tìm kiếm" class="input-group-field st-default-search-input search-text">
+                                    <span class="input-group-btn">
+                                        <button class="btn icon-fallback-text">
+                                            <span class="fas fa-search">
+                                            </span>
+                                        </button>
+                                    </span>
+                                </form>
+                            </div>
+                        </div>*@
+                        <div class="col-lg-4 col-md-4">
+                            <div class="header_top">
+                                <div class="topbar_right">
+                                    <div class="list-inline">
+                                        <ul class="ul-account">
+                                            <li>
+                                                <div id="ae-cover-lang" class="ae-tablet-lang">
+                                                    <div class="ae-block-language ae-type-dropdown ae-hide ae-no-float">
+                                                        <div class="ae-lang-selected">
+                                                            <a href="javascript:;">
+                                                                <img class="ae-icon-left ae-flag" src="data:image/gif;base64,R0lGODlhEAALANUAAPU8POwAAPQAAP96euUAAPdLS/QsHPk8Pf5dXf52dvZERPvMRPx3SvITE/1STvIuLvhSUvj4NflUVf5xcv1ubvQgIPUlJfENDfdDLfpAQPthYftFRfoAAPYqKv5ZWfn5PPr6QfxqavxmZvpdXfMZGfxLS/tKSfc3NvMzM/1UVOAAAPQfH/cxMfxPT/k6OvlzOvYzK/f3MPrAP/f3L/dgL/Z3KvlYWPYsLPzVS/fSMPg+NPX1JPZOKt0AAP0AAP8AACH5BAAAAAAALAAAAAAQAAsAAAaPwJ/w5yv6OByBUhAI/AbQRGJCCYk0Ixuk4BwgEJ6Ug8HIHE6sG/cJFpdkizOrY1EQfImwA7cAfWQ5MBYVAHcTKS0lDh8fETEYFiskhT4ULSYbGS8RMzWRJA0nBBwhmBkuETQ8O5INDSgqHCKZLjoYdAYGDRcXDyoCWDYSWwoKACcoKA8PPUtNzwTRKio91UEAOw==" alt="ap multilangauge">
+                                                                <span>
+                                                                    Tiếng Việt
+                                                                </span>
+                                                                <img alt="ap multilangauge" class="ae-icon-right ae-caret" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAG1JREFUOI3tzj0Kg2AQhOFHqxAQyRkEIY0XsAl4gxAIHjoXsPIcFmpjLD7wJ5LSt5vdmdnl5O/ccdnwFIi+Ig6WDZ64LoRLdBjWLsSokQTzB/KN72YivJFOukK2ZFwreaHHB+3e62HJ7Ujw5AdGZAQIe/VHND0AAAAASUVORK5CYII=">
+                                                            </a>
+                                                            <ul class="ae-box-lang none animated">
+                                                                <li data-lang="vi" class="ae-item-lang ae-active">
+                                                                    <a href="https://gacxepbookstore.vn/?aelang=vi">
+                                                                        <img class="ae-icon-left" src="data:image/gif;base64,R0lGODlhEAALANUAAPU8POwAAPQAAP96euUAAPdLS/QsHPk8Pf5dXf52dvZERPvMRPx3SvITE/1STvIuLvhSUvj4NflUVf5xcv1ubvQgIPUlJfENDfdDLfpAQPthYftFRfoAAPYqKv5ZWfn5PPr6QfxqavxmZvpdXfMZGfxLS/tKSfc3NvMzM/1UVOAAAPQfH/cxMfxPT/k6OvlzOvYzK/f3MPrAP/f3L/dgL/Z3KvlYWPYsLPzVS/fSMPg+NPX1JPZOKt0AAP0AAP8AACH5BAAAAAAALAAAAAAQAAsAAAaPwJ/w5yv6OByBUhAI/AbQRGJCCYk0Ixuk4BwgEJ6Ug8HIHE6sG/cJFpdkizOrY1EQfImwA7cAfWQ5MBYVAHcTKS0lDh8fETEYFiskhT4ULSYbGS8RMzWRJA0nBBwhmBkuETQ8O5INDSgqHCKZLjoYdAYGDRcXDyoCWDYSWwoKACcoKA8PPUtNzwTRKio91UEAOw==" alt="ap multilangauge">
+                                                                        <span>
+                                                                            Tiếng Việt
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li data-lang="en" class="ae-item-lang">
+                                                                    <a href="https://gacxepbookstore.vn/?aelang=en">
+                                                                        <img class="ae-icon-left" src="data:image/gif;base64,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" alt="ap multilangauge">
+                                                                        <span>
+                                                                            English (UK)
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="ae-cover-lang" class="ae-mobile-lang">
+                                                    <div class="ae-block-language ae-type-dropdown ae-hide ae-no-float">
+                                                        <div class="ae-lang-selected">
+                                                            <a href="javascript:;">
+                                                                <img class="ae-icon-left ae-flag" src="data:image/gif;base64,R0lGODlhEAALANUAAPU8POwAAPQAAP96euUAAPdLS/QsHPk8Pf5dXf52dvZERPvMRPx3SvITE/1STvIuLvhSUvj4NflUVf5xcv1ubvQgIPUlJfENDfdDLfpAQPthYftFRfoAAPYqKv5ZWfn5PPr6QfxqavxmZvpdXfMZGfxLS/tKSfc3NvMzM/1UVOAAAPQfH/cxMfxPT/k6OvlzOvYzK/f3MPrAP/f3L/dgL/Z3KvlYWPYsLPzVS/fSMPg+NPX1JPZOKt0AAP0AAP8AACH5BAAAAAAALAAAAAAQAAsAAAaPwJ/w5yv6OByBUhAI/AbQRGJCCYk0Ixuk4BwgEJ6Ug8HIHE6sG/cJFpdkizOrY1EQfImwA7cAfWQ5MBYVAHcTKS0lDh8fETEYFiskhT4ULSYbGS8RMzWRJA0nBBwhmBkuETQ8O5INDSgqHCKZLjoYdAYGDRcXDyoCWDYSWwoKACcoKA8PPUtNzwTRKio91UEAOw==" alt="ap multilangauge">
+                                                                <span>
+                                                                    Tiếng Việt
+                                                                </span>
+                                                                <img alt="ap multilangauge" class="ae-icon-right ae-caret" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAG1JREFUOI3tzj0Kg2AQhOFHqxAQyRkEIY0XsAl4gxAIHjoXsPIcFmpjLD7wJ5LSt5vdmdnl5O/ccdnwFIi+Ig6WDZ64LoRLdBjWLsSokQTzB/KN72YivJFOukK2ZFwreaHHB+3e62HJ7Ujw5AdGZAQIe/VHND0AAAAASUVORK5CYII=">
+                                                            </a>
+                                                            <ul class="ae-box-lang none animated">
+                                                                <li data-lang="vi" class="ae-item-lang ae-active">
+                                                                    <a href="https://gacxepbookstore.vn/?aelang=vi">
+                                                                        <img class="ae-icon-left" src="data:image/gif;base64,R0lGODlhEAALANUAAPU8POwAAPQAAP96euUAAPdLS/QsHPk8Pf5dXf52dvZERPvMRPx3SvITE/1STvIuLvhSUvj4NflUVf5xcv1ubvQgIPUlJfENDfdDLfpAQPthYftFRfoAAPYqKv5ZWfn5PPr6QfxqavxmZvpdXfMZGfxLS/tKSfc3NvMzM/1UVOAAAPQfH/cxMfxPT/k6OvlzOvYzK/f3MPrAP/f3L/dgL/Z3KvlYWPYsLPzVS/fSMPg+NPX1JPZOKt0AAP0AAP8AACH5BAAAAAAALAAAAAAQAAsAAAaPwJ/w5yv6OByBUhAI/AbQRGJCCYk0Ixuk4BwgEJ6Ug8HIHE6sG/cJFpdkizOrY1EQfImwA7cAfWQ5MBYVAHcTKS0lDh8fETEYFiskhT4ULSYbGS8RMzWRJA0nBBwhmBkuETQ8O5INDSgqHCKZLjoYdAYGDRcXDyoCWDYSWwoKACcoKA8PPUtNzwTRKio91UEAOw==" alt="ap multilangauge">
+                                                                        <span>
+                                                                            Tiếng Việt
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li data-lang="en" class="ae-item-lang">
+                                                                    <a href="https://gacxepbookstore.vn/?aelang=en">
+                                                                        <img class="ae-icon-left" src="data:image/gif;base64,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" alt="ap multilangauge">
+                                                                        <span>
+                                                                            English (UK)
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            @if (Session["QuanTriVien"] != null)
+                                            {
+                                                <li style="display: block">
+                                                    <a href="~/Admin/Index" title="Tài khoản" class="account_a a_db">
+                                                        @*Xin chào, @Session("TenDangNhap")*@ Tài khoản
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="Đăng xuất" class="account_a a_db">
+                                                        <span>
+                                                            Đăng xuất
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                <li>
+                                                    <a href="~/Admin/AdminRegister" title="Đăng ký" class="account_a a_db">
+                                                        <span>
+                                                            Đăng ký
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="line_">
+                                                    |
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Login" title="Đăng nhập" class="account_a a_db">
+                                                        <span>
+                                                            Đăng nhập
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="line_">
+                                                    |
+                                                </li>
+                                            }
+                                           
+                                            
+
+                                           
+                                        </ul>
+                                    </div>
+                                    @*<div id="ae-cover-lang" class="ae-desktop-lang">
+                                        <div class="ae-block-language ae-type-dropdown ae-no-float">
+                                            <div class="ae-lang-selected">
+                                                <a href="javascript:;">
+                                                    <img class="ae-icon-left ae-flag" src="data:image/gif;base64,R0lGODlhEAALANUAAPU8POwAAPQAAP96euUAAPdLS/QsHPk8Pf5dXf52dvZERPvMRPx3SvITE/1STvIuLvhSUvj4NflUVf5xcv1ubvQgIPUlJfENDfdDLfpAQPthYftFRfoAAPYqKv5ZWfn5PPr6QfxqavxmZvpdXfMZGfxLS/tKSfc3NvMzM/1UVOAAAPQfH/cxMfxPT/k6OvlzOvYzK/f3MPrAP/f3L/dgL/Z3KvlYWPYsLPzVS/fSMPg+NPX1JPZOKt0AAP0AAP8AACH5BAAAAAAALAAAAAAQAAsAAAaPwJ/w5yv6OByBUhAI/AbQRGJCCYk0Ixuk4BwgEJ6Ug8HIHE6sG/cJFpdkizOrY1EQfImwA7cAfWQ5MBYVAHcTKS0lDh8fETEYFiskhT4ULSYbGS8RMzWRJA0nBBwhmBkuETQ8O5INDSgqHCKZLjoYdAYGDRcXDyoCWDYSWwoKACcoKA8PPUtNzwTRKio91UEAOw==" alt="ap multilangauge">
+                                                    <span>
+                                                        Tiếng Việt
+                                                    </span>
+                                                    <img alt="ap multilangauge" class="ae-icon-right ae-caret" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAG1JREFUOI3tzj0Kg2AQhOFHqxAQyRkEIY0XsAl4gxAIHjoXsPIcFmpjLD7wJ5LSt5vdmdnl5O/ccdnwFIi+Ig6WDZ64LoRLdBjWLsSokQTzB/KN72YivJFOukK2ZFwreaHHB+3e62HJ7Ujw5AdGZAQIe/VHND0AAAAASUVORK5CYII=">
+                                                </a>
+                                                <ul class="ae-box-lang none animated">
+                                                    <li data-lang="vi" class="ae-item-lang ae-active">
+                                                        <a href="https://gacxepbookstore.vn/?aelang=vi">
+                                                            <img class="ae-icon-left" src="data:image/gif;base64,R0lGODlhEAALANUAAPU8POwAAPQAAP96euUAAPdLS/QsHPk8Pf5dXf52dvZERPvMRPx3SvITE/1STvIuLvhSUvj4NflUVf5xcv1ubvQgIPUlJfENDfdDLfpAQPthYftFRfoAAPYqKv5ZWfn5PPr6QfxqavxmZvpdXfMZGfxLS/tKSfc3NvMzM/1UVOAAAPQfH/cxMfxPT/k6OvlzOvYzK/f3MPrAP/f3L/dgL/Z3KvlYWPYsLPzVS/fSMPg+NPX1JPZOKt0AAP0AAP8AACH5BAAAAAAALAAAAAAQAAsAAAaPwJ/w5yv6OByBUhAI/AbQRGJCCYk0Ixuk4BwgEJ6Ug8HIHE6sG/cJFpdkizOrY1EQfImwA7cAfWQ5MBYVAHcTKS0lDh8fETEYFiskhT4ULSYbGS8RMzWRJA0nBBwhmBkuETQ8O5INDSgqHCKZLjoYdAYGDRcXDyoCWDYSWwoKACcoKA8PPUtNzwTRKio91UEAOw==" alt="ap multilangauge">
+                                                            <span>
+                                                                Tiếng Việt
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li data-lang="en" class="ae-item-lang">
+                                                        <a href="https://gacxepbookstore.vn/?aelang=en">
+                                                            <img class="ae-icon-left" src="data:image/gif;base64,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" alt="ap multilangauge">
+                                                            <span>
+                                                                English (UK)
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="containers">
+                        <div class="rows">
+                            <div class="wrap_main hidden-xs hidden-sm">
+                                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                                    <div class="bg-header-nav hidden-xs hidden-sm ">
+                                        <div>
+                                            <div class="row row-noGutter-2">
+                                                <nav class="header-nav pull-left">
+                                                    <ul class="item_big">
+                                                        @*<li class="nav-li nav-item ">
+                                                            <a class="a-img" href="~/CustomerProducts/Index">
+                                                                <span>
+                                                                    Quản lý nhân viên
+                                                                </span>
+                                                            </a>
+                                                        </li>*@
+                                                        <li class="nav-li nav-item ">
+                                                            <a class="a-img" href="~/Admin/CustomerAdminstration">
+                                                                <span>
+                                                                    Quản lý khách hàng
+                                                                </span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-li nav-item ">
+                                                            <a class="a-img" href="~/Categories/Index">
+                                                                <span>
+                                                                    Quản lý danh mục
+                                                                </span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-li nav-item ">
+                                                            <a class="a-img" href="~/Books/Index">
+                                                                <span>
+                                                                    Quản lý sản phẩm
+                                                                </span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-li nav-item ">
+                                                            <a class="a-img" href="/Home/About">
+                                                                <span>
+                                                                    Quản lý đơn hàng
+                                                                </span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--HEADER ADMIN END-->
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!--FOOTER-->
+    <div class="footer">
+
+        <!--SECTION POLICY START VER 1 -->
+
+        <div style="box-sizing:border-box;margin-bottom:10px;padding:30px 0px;background:rgb(73, 131, 116) none repeat scroll 0% 0% / auto padding-box border-box;">
+            <div style="width: 1170px;box-sizing:border-box;padding-right:15px;padding-left:15px;margin-right: auto;margin-left: auto;">
+                <div style="box-sizing:border-box;margin-right:-15px;margin-left:-15px;">
+                    <div style="box-sizing:border-box;padding-bottom:0px;">
+
+                        <div data-lg-items="4" data-md-items="3" data-sm-items="2" data-xs-items="1" data-loop="false" data-height="false" data-dot="false" data-nav="false" style="box-sizing:border-box;display:block;width: 100%;z-index:1;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);position:relative;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div style="box-sizing:border-box;position:relative;overflow:hidden;transform:matrix(1, 0, 0, 1, 0, 0);">
+                                <div style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1200px;transition:all 0s ease 0s;width: 1200px;box-sizing:border-box;position:relative;">
+                                    <div style="width: 270px; margin-right: 30px;margin-right:30px;box-sizing:border-box;user-select:none;min-height:1px;float:left;backface-visibility:hidden;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);position:relative;">
+                                        <div style="box-sizing:border-box;position:relative;text-align:left;width: 100%;float:left;min-height:1px;padding-right:15px;padding-left:15px;">
+                                            <div style="box-sizing:border-box;border:0px none rgb(37, 37, 37);display:flex;align-items:stretch;flex-direction:row;">
+                                                <span style="box-sizing:border-box;width: 55px;height:55px;display:block;float:left;">
+                                                    <img src="//bizweb.dktcdn.net/100/364/248/themes/736344/assets/policy1.png?1685433925349" alt="policy " style="box-sizing:border-box;max-width:100%;height: auto;margin: 0px auto;transition:all 0.4s ease 0s;width: auto;border:0px none rgb(37, 37, 37);display:block;transform-style:preserve-3d;vertical-align:middle;" />
+                                                </span>
+                                                <div style="box-sizing:border-box;position:relative;flex: 1 1 auto;display:block;float:left;margin:0px;width: calc(100% - 100px) !important;padding:0px 0px 0px 10px;">
+                                                    <span style="box-sizing:border-box;color:rgb(255, 255, 255);font-weight:700;font-size:15px;text-transform:uppercase;">Miễn phí vận chuyển</span>
+                                                    <p style="box-sizing:border-box;color:rgb(255, 255, 255);font-size:14px;margin:0px 0px 15px;">Đơn hàng từ 500,000VND</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 270px; margin-right: 30px;margin-right:30px;box-sizing:border-box;user-select:none;min-height:1px;float:left;backface-visibility:hidden;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);position:relative;">
+                                        <div style="box-sizing:border-box;position:relative;text-align:left;width: 100%;float:left;min-height:1px;padding-right:15px;padding-left:15px;">
+                                            <div style="box-sizing:border-box;border:0px none rgb(37, 37, 37);display:flex;align-items:stretch;flex-direction:row;">
+                                                <span style="box-sizing:border-box;width: 55px;height:55px;display:block;float:left;">
+                                                    <img src="//bizweb.dktcdn.net/100/364/248/themes/736344/assets/policy2.png?1685433925349" alt="policy " style="box-sizing:border-box;max-width:100%;height: auto;margin: 0px auto;transition:all 0.4s ease 0s;width: auto;border:0px none rgb(37, 37, 37);display:block;transform-style:preserve-3d;vertical-align:middle;" />
+                                                </span>
+                                                <div style="box-sizing:border-box;position:relative;flex: 1 1 auto;display:block;float:left;margin:0px;width: calc(100% - 100px) !important;padding:0px 0px 0px 10px;">
+                                                    <span style="box-sizing:border-box;color:rgb(255, 255, 255);font-weight:700;font-size:15px;text-transform:uppercase;">Dễ dàng tiện lợi</span>
+                                                    <p style="box-sizing:border-box;color:rgb(255, 255, 255);font-size:14px;margin:0px 0px 15px;">Đặt sách theo yêu cầu</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 270px; margin-right: 30px;margin-right:30px;box-sizing:border-box;user-select:none;min-height:1px;float:left;backface-visibility:hidden;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);position:relative;">
+                                        <div style="box-sizing:border-box;position:relative;text-align:left;width: 100%;float:left;min-height:1px;padding-right:15px;padding-left:15px;">
+                                            <div style="box-sizing:border-box;border:0px none rgb(37, 37, 37);display:flex;align-items:stretch;flex-direction:row;">
+                                                <span style="box-sizing:border-box;width: 55px;height:55px;display:block;float:left;">
+                                                    <img src="//bizweb.dktcdn.net/100/364/248/themes/736344/assets/policy3.png?1685433925349" alt="policy " style="box-sizing:border-box;max-width:100%;height: auto;margin: 0px auto;transition:all 0.4s ease 0s;width: auto;border:0px none rgb(37, 37, 37);display:block;transform-style:preserve-3d;vertical-align:middle;" />
+                                                </span>
+                                                <div style="box-sizing:border-box;position:relative;flex: 1 1 auto;display:block;float:left;margin:0px;width: calc(100% - 100px) !important;padding:0px 0px 0px 10px;">
+                                                    <span style="box-sizing:border-box;color:rgb(255, 255, 255);font-weight:700;font-size:15px;text-transform:uppercase;">Tích điểm đổi quà</span>
+                                                    <p style="box-sizing:border-box;color:rgb(255, 255, 255);font-size:14px;margin:0px 0px 15px;">Nhận nhiều ưu đãi</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 270px; margin-right: 30px;margin-right:30px;box-sizing:border-box;user-select:none;min-height:1px;float:left;backface-visibility:hidden;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);position:relative;">
+                                        <div style="box-sizing:border-box;position:relative;text-align:left;width: 100%;float:left;min-height:1px;padding-right:15px;padding-left:15px;">
+                                            <div style="box-sizing:border-box;border:0px none rgb(37, 37, 37);display:flex;align-items:stretch;flex-direction:row;">
+                                                <span style="box-sizing:border-box;width: 55px;height:55px;display:block;float:left;">
+                                                    <img src="//bizweb.dktcdn.net/100/364/248/themes/736344/assets/policy4.png?1685433925349" alt="policy " style="box-sizing:border-box;max-width:100%;height: auto;margin: 0px auto;transition:all 0.4s ease 0s;width: auto;border:0px none rgb(37, 37, 37);display:block;transform-style:preserve-3d;vertical-align:middle;" />
+                                                </span>
+                                                <div style="box-sizing:border-box;position:relative;flex: 1 1 auto;display:block;float:left;margin:0px;width: calc(100% - 100px) !important;padding:0px 0px 0px 10px;">
+                                                    <span style="box-sizing:border-box;color:rgb(255, 255, 255);font-weight:700;font-size:15px;text-transform:uppercase;">Dịch vụ 5 sao</span>
+                                                    <p style="box-sizing:border-box;color:rgb(255, 255, 255);font-size:14px;margin:0px 0px 15px;">150+ ratings từ Facebook</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="box-sizing:border-box;display:none;">
+                                <div style="box-sizing:border-box;opacity:1;cursor:default;left:0px;top:-81px;border:1px solid rgb(225, 225, 225);position:absolute;text-decoration:none solid rgb(37, 37, 37);width: 33px;height:33px;margin-top:-15px;padding:0px;background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(37, 37, 37) none 0px;text-indent:1010%;border-radius:50%;white-space:nowrap;margin-right:0px;margin-left:0px;font-size:0px;user-select:none;">prev</div>
+                                <div style="box-sizing:border-box;opacity:1;cursor:default;right:0px;top:-81px;border:1px solid rgb(225, 225, 225);position:absolute;text-decoration:none solid rgb(37, 37, 37);width: 33px;height:33px;margin-top:-15px;padding:0px;background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(37, 37, 37) none 0px;text-indent:1010%;border-radius:50%;white-space:nowrap;margin-right:0px;margin-left:0px;font-size:0px;user-select:none;">next</div>
+                            </div>
+                            <div style="box-sizing:border-box;display:none;margin-top:10px;text-align:center;position:absolute;bottom:-30px;width: 100%;">
+                                <div style="box-sizing:border-box;background:rgb(73, 131, 116) none repeat scroll 0% 0% / auto padding-box border-box;display:inline-block;width: 10px;height:10px;border-radius:50%;margin:0px 5px;cursor:pointer;user-select:none;"><span style="box-sizing:border-box;display:none;"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--SECTION POLICY END VER 1-->
+        <!--MID FOOTER START-->
+
+        <div style="box-sizing:border-box;padding:40px 0px 0px;">
+            <div style="width: 1170px;box-sizing:border-box;padding-right:15px;padding-left:15px;margin-right: auto;margin-left: auto;">
+                <div style="box-sizing:border-box;margin-right:-15px;margin-left:-15px;">
+                    <div style="width: 33.3333%;float:left;box-sizing:border-box;position:relative;min-height:1px;padding-right:15px;padding-left:15px;">
+                        <div style="box-sizing:border-box;padding-bottom:40px;">
+                            <div style="box-sizing:border-box;">
+                                <a href="/" title="Gác Xép Bookstore" style="box-sizing:border-box;color:rgb(37, 37, 37);text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">
+                                    <img src="https://bizweb.dktcdn.net/100/364/248/themes/736344/assets/logo.png?1685433925349" alt="logo Gác Xép Bookstore" style="box-sizing:border-box;border:0px none rgb(37, 37, 37);max-width:100%;height: auto;vertical-align:middle;" />
+                                </a>
+                            </div>
+                            <div style="box-sizing:border-box;">
+                                <h4 style="box-sizing:border-box;color:rgb(37, 37, 37);letter-spacing:0.18px;font-size:18px;font-family:'Product Sans';line-height:25.2px;margin-top:10px;margin-bottom:10px;font-weight:500;">
+                                    <span style="box-sizing:border-box;">
+                                        Gác Xép Bookstore:
+                                    </span>
+                                </h4>
+                                <div style="box-sizing:border-box;font-size:14px;">
+                                    <ul style="box-sizing:border-box;padding:0px;list-style:outside none none;margin-top:0px;margin-bottom:10px;">
+                                        <li style="box-sizing:border-box;">
+                                            An online foreign-language bookshop based in Hanoi, with a focus on English-language used books at affordable price. We offer nation-wide delivery.
+                                        </li>
+                                        <li style="box-sizing:border-box;">
+
+
+
+                                            Email: <a href="mailto:tiemsachgacxep@gmail.com" style="box-sizing:border-box;color:rgb(37, 37, 37);text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">tiemsachgacxep@gmail.com</a>
+                                        </li>
+                                        <li style="box-sizing:border-box;">
+
+                                            Phone: <a href="tel:0366600908" style="box-sizing:border-box;color:rgb(37, 37, 37);text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">0366600908</a>
+                                        </li>
+                                        <li style="box-sizing:border-box;">
+                                            <span style="box-sizing:border-box;">HỘ KINH DOANH TIỆM SÁCH GÁC XÉP</span><span style="box-sizing:border-box;"> <br style="box-sizing:border-box;" />GPKD số 01D8039681 do Quân Hai Bà Trưng cấp ngày 21/07/2020</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 66.6667%;float:left;box-sizing:border-box;position:relative;min-height:1px;padding-right:15px;padding-left:15px;">
+                        <div style="box-sizing:border-box;margin-right:-15px;margin-left:-15px;">
+                            <div style="width: 33.3333%;float:left;box-sizing:border-box;position:relative;min-height:1px;padding-right:15px;padding-left:15px;">
+                                <div style="box-sizing:border-box;border-left:0px none rgb(37, 37, 37);padding-left:0px;padding-bottom:40px;">
+                                    <h4 style="box-sizing:border-box;margin:0px 0px 20px;line-height:normal;letter-spacing:0.5px;font-weight:400;color:rgb(255, 255, 255);position:relative;font-size:18px;font-family:'Product Sans';margin-top:0px;margin-bottom:20px;">
+                                        <a role="button" data-toggle="collapse" aria-expanded="false" data-target="#collapseListMenu01" aria-controls="collapseListMenu01" style="box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;cursor:default;font-size:15px;text-transform:uppercase;color:rgb(73, 131, 116);position:relative;font-weight:700;text-decoration:none solid rgb(73, 131, 116);transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">
+                                            Thông tin chi tiết <i aria-hidden="true" style="display:none;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:15px;font-family:FontAwesome;font-size:15px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i>
+                                        </a>
+                                    </h4>
+                                    <div style="display:block;box-sizing:border-box;">
+                                        <ul style="box-sizing:border-box;line-height:35px;padding:0px;list-style:outside none none;margin-top:0px;margin-bottom:10px;">
+
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/gioi-thieu" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Về chúng tôi</a></li>
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/huong-dan" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Hướng dẫn mua sách</a></li>
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/faq" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">FAQ</a></li>
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/contact" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Liên hệ</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 33.3333%;float:left;box-sizing:border-box;position:relative;min-height:1px;padding-right:15px;padding-left:15px;">
+                                <div style="box-sizing:border-box;padding-bottom:40px;">
+                                    <h4 style="box-sizing:border-box;margin:0px 0px 20px;line-height:normal;letter-spacing:0.5px;font-weight:400;color:rgb(255, 255, 255);position:relative;font-size:18px;font-family:'Product Sans';margin-top:0px;margin-bottom:20px;">
+                                        <a role="button" data-toggle="collapse" aria-expanded="false" data-target="#collapseListMenu02" aria-controls="collapseListMenu02" style="box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;cursor:default;font-size:15px;text-transform:uppercase;color:rgb(73, 131, 116);position:relative;font-weight:700;text-decoration:none solid rgb(73, 131, 116);transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">
+                                            Chính sách <i aria-hidden="true" style="display:none;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:15px;font-family:FontAwesome;font-size:15px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i>
+                                        </a>
+                                    </h4>
+                                    <div style="display:block;box-sizing:border-box;">
+                                        <ul style="box-sizing:border-box;line-height:35px;padding:0px;list-style:outside none none;margin-top:0px;margin-bottom:10px;">
+
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/dieu-khoan" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Quy định sử dụng</a></li>
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/chinh-sach-bao-mat" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Chính sách bảo mật</a></li>
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/chinh-sach-van-chuyen" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Chính sách vận chuyển</a></li>
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/chinh-sach-doi-tra" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Chính sách đổi trả</a></li>
+                                            <li style="box-sizing:border-box;margin-bottom:0px;font-size:14px;line-height:32px;transition:all 0.5s ease 0s;"><a href="/hinh-thuc-thanh-toan" style="box-sizing:border-box;color:rgb(37, 37, 37);position:relative;text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Hình thức thanh toán</a></li>
+                                        </ul>
+                                    </div>
+                                    <h4 style="box-sizing:border-box;margin:0px 0px 20px;line-height:normal;letter-spacing:0.5px;font-weight:400;color:rgb(255, 255, 255);position:relative;font-size:18px;font-family:'Product Sans';margin-top:0px;margin-bottom:20px;">
+                                        <a role="button" data-toggle="collapse" aria-expanded="false" data-target="#collapseListMenu02" aria-controls="collapseListMenu02" style="box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;cursor:default;font-size:15px;text-transform:uppercase;color:rgb(73, 131, 116);position:relative;font-weight:700;text-decoration:none solid rgb(73, 131, 116);transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">
+                                            Đăng ký <i aria-hidden="true" style="display:none;font-style:normal;font-variant:normal;font-kerning: auto;font-optical-sizing: auto;font-feature-settings:normal;font-variation-settings:normal;font-weight:400;font-stretch:100%;line-height:15px;font-family:FontAwesome;font-size:15px;text-rendering: auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;"></i>
+                                        </a>
+                                    </h4>
+                                    <div style="box-sizing:border-box;float:left;width: 100%;">
+                                        <ul style="box-sizing:border-box;padding:0px;list-style:outside none none;margin-top:0px;margin-bottom:10px;">
+                                            <li style="box-sizing:border-box;margin-top:8px;padding-bottom:25px;font-size:14px;position:relative;line-height:20px;margin-bottom:0px;">
+
+
+
+                                                <form action="#" method="post" name="mc-embedded-subscribe-form" target="_blank" style="box-sizing:border-box;margin-bottom:0px;">
+                                                    <input type="email" value="" placeholder="Nhập email..." name="EMAIL" style="box-sizing:border-box;width: 150px;border-radius:0px;margin-right:3px;margin-bottom:0px;display:inline-block;background:rgb(235, 235, 235) none repeat scroll 0% 0% / auto padding-box border-box;padding:0px 20px 0px 15px;min-height:34px;border:0px none rgb(28, 28, 28);max-width:100%;appearance:none;font-size:14px;line-height:23.8px;font-family:'Product Sans';color:rgb(28, 28, 28);-webkit-font-smoothing:antialiased;text-size-adjust:100%;margin:0px 3px 0px 0px;" /> <button name="subscribe" style="box-sizing:border-box;margin-top:-3px;line-height:34px;height:34px;border-radius:0px;padding:0px 12px;background:rgb(73, 131, 116) none repeat scroll 0% 0% / auto padding-box border-box;color:rgb(255, 255, 255);font-size:14px;font-family:'Product Sans';border:0px none rgb(255, 255, 255);display:inline-block;text-align:center;white-space:nowrap;cursor:pointer;font-weight:400;letter-spacing:normal;transition:background-color 0.1s ease-in 0s;outline:rgb(255, 255, 255) none 0px;appearance:none;overflow:visible;-webkit-font-smoothing:antialiased;text-size-adjust:100%;background-color:rgb(73, 131, 116);border-color:rgb(255, 255, 255);margin-bottom:0px;vertical-align:middle;touch-action:manipulation;user-select:none;background-image:none;text-transform:none;margin:-3px 0px 0px;">Đăng ký</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div> <a href="http://online.gov.vn/Home/WebDetails/71089" style="box-sizing:border-box;color:rgb(37, 37, 37);text-decoration:none solid rgb(37, 37, 37);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);"><img src="https://bizweb.dktcdn.net/100/364/248/themes/736344/assets/logo_bct.png?1685433925349" style="max-width:100%box-sizing:border-box;border:0px none rgb(37, 37, 37);height: auto;box-sizing:border-box;vertical-align:middle;" /></a>
+                                </div>
+                            </div>
+                            <div style="width: 33.3333%;float:left;box-sizing:border-box;position:relative;min-height:1px;padding-right:15px;padding-left:15px;">
+                                <div style="box-sizing:border-box;float:left;width: 100%;padding-bottom:40px;">
+
+                                    <div style="box-sizing:border-box;">
+                                        <h4 style="box-sizing:border-box;margin:0px 0px 20px;line-height:normal;letter-spacing:0.5px;font-weight:400;color:rgb(255, 255, 255);position:relative;font-size:18px;font-family:'Product Sans';margin-top:0px;margin-bottom:20px;">
+                                            <a style="box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;cursor:default;font-size:15px;text-transform:uppercase;color:rgb(73, 131, 116);position:relative;font-weight:700;text-decoration:none solid rgb(73, 131, 116);transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Fanpage</a>
+                                        </h4>
+                                        <div data-href="https://www.facebook.com/xepbookstore/" data-tabs="timeline" data-height="214px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=230&amp;height=214&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fxepbookstore%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline" style="box-sizing:border-box;display:inline-block;position:relative;"><span style="vertical-align: bottom; width: 230px; height: 214px;width: 230px;height:214px;box-sizing:border-box;display:inline-block;position:relative;text-align:justify;"><iframe name="f28db5c86ff91b4" width="1000px" height="214px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v5.0/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3214d0bbfa8828%26domain%3Dgacxepbookstore.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fgacxepbookstore.vn%252Ff2b5b76acea05d8%26relation%3Dparent.parent&amp;container_width=230&amp;height=214&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fxepbookstore%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline" style="border: none; visibility: visible; width: 230px; height: 214px;visibility:visible;width: 230px;height:214px;box-sizing:border-box;position:absolute;"></iframe></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="box-sizing:border-box;margin:0px 0px 15px;">Gác Xép Bookstore là một hiệu sách tại Hà Nội, chuyên cung cấp sách ngoại văn nhiều thể loại với hơn 2000 tựa sách ngoại văn. Ngoài ra, chúng tôi còn nhận mua sách từ nước ngoài, đặt sách amazon cũng như các website khác nhau theo yêu cầu khách hàng. Gacxepbookstore.vn is an online bookstore based in Hanoi that provides a great selection of English books. Visit our site for more information</p>
+                </div>
+            </div>
+        </div>
+
+        <!--MID FOOTER END-->
+        <!--RIGHT POLICY START-->
+
+        <div style="box-sizing:border-box;float:left;width: 100%;text-align:center;font-size:14px;position:relative;background:rgb(51, 51, 51) none repeat scroll 0% 0% / auto padding-box border-box;padding:20px 0px;">
+            <div style="width: 1170px;box-sizing:border-box;padding-right:15px;padding-left:15px;margin-right: auto;margin-left: auto;">
+                <div style="box-sizing:border-box;">
+                    <div style="display:flex;flex-flow:row nowrap;box-sizing:border-box;margin-right:-15px;margin-left:-15px;">
+                        <div style="order:1;width: 100%;float:left;box-sizing:border-box;text-align:center;position:relative;min-height:1px;padding-right:15px;padding-left:15px;">
+                            <span style="box-sizing:border-box;color:rgb(255, 255, 255);"><span style="box-sizing:border-box;opacity:1;">Bản quyền thuộc về <span style="font-weight: bold;color: #498374;box-sizing:border-box;">Gác Xép Bookstore</span><span style="box-sizing:border-box;"> | </span></span><span style="box-sizing:border-box;">Cung cấp bởi</span> <a href="https://www.sapo.vn/?utm_campaign=cpn:site_khach_hang-plm:footer&amp;utm_source=site_khach_hang&amp;utm_medium=referral&amp;utm_content=fm:text_link-km:-sz:&amp;utm_term=&amp;campaign=site_khach_hang" rel="dofollow" title="Sapo" target="_blank" style="box-sizing:border-box;font-weight:400;color:rgb(73, 131, 116);opacity:1;z-index:999;text-decoration:none solid rgb(73, 131, 116);background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;transition:all 0.15s ease-in-out 0s;background-color:rgba(0, 0, 0, 0);">Sapo</a> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--RIGHT POLICY END-->
+
+    </div>
+
+
+</body>
+</html>

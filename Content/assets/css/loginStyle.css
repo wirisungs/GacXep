@@ -1,0 +1,139 @@
+﻿* {
+    font-family: "Product Sans";
+}
+
+.login-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .login-area .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+    }
+
+        .login-area .login-form .form-header {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .login-area .login-form .form-header .social-log {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+                .login-area .login-form .form-header .social-log .fb-log {
+                    display: flex;
+                    flex-direction: row;
+                    background-color: #3b5998;
+                    color: white;
+                    cursor: pointer;
+                    border-radius: 1px;
+                    justify-content: center;
+                    margin-right: 5px;
+                }
+
+
+                    .login-area .login-form .form-header .social-log .fb-log .left-items {
+                        display: flex;
+                        align-items: center;
+                        border-right: solid 1px #244488;
+                        color: white;
+                        padding-left: 10px;
+                        padding-right: 15px;
+                    }
+
+                    .login-area .login-form .form-header .social-log .fb-log .right-items p {
+                        margin: 0;
+                        padding: 5px 5px 5px 5px;
+                        width: 80px;
+                        color: white;
+                    }
+
+                .login-area .login-form .form-header .social-log .gmail-log {
+                    display: flex;
+                    flex-direction: row;
+                    background-color: #e14b33;
+                    color: white;
+                    cursor: pointer;
+                    border-radius: 1px;
+                    justify-content: center;
+                }
+
+
+                    .login-area .login-form .form-header .social-log .gmail-log .left-items {
+                        display: flex;
+                        align-items: center;
+                        border-right: solid 1px #c2412d;
+                        color: white;
+                        padding-left: 10px;
+                        padding-right: 5px;
+                    }
+
+                    .login-area .login-form .form-header .social-log .gmail-log .right-items p {
+                        margin: 0;
+                        padding: 5px 5px 5px 0;
+                        color: white;
+                        width: 80px;
+                    }
+
+.form-body {
+    display: flex;
+    width: 100%;
+}
+
+.form-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .form-body input {
+        width: 100%;
+        padding: 10px 15px 10px 15px;
+        margin-top: 10px;
+        border: solid 1px #e1e1e1;
+        outline: none;
+    }
+
+    .form-body button {
+        margin-top: 30px;
+        background-color: #498374;
+        color: white;
+        width: 40%;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color .2s;
+    }
+
+        .form-body button:hover {
+            background-color: #376257;
+        }
+
+.form-footer {
+    margin: 20px 0 0;
+}
+
+    .form-footer p {
+        color: #707070;
+        margin: 0;
+    }
+
+        .form-footer p a {
+            text-decoration: underline;
+            color: #707070;
+            transition: color .2s;
+        }
+
+            .form-footer p a:hover {
+                color: #498374;
+            }

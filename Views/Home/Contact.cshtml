@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/assets/css/contactcs.css" />
+
+
+
+
+<div class="page_contact snipcss-PeiVw">
+    <div class="container">
+        <div class="row snipcss0-0-0-1 tether-element-attached-top tether-element-attached-center tether-target-attached-top tether-target-attached-center">
+            <div class="select_maps col-md-4 col-sm-12 col-xs-12 snipcss0-1-1-2">
+                <div class="aa mid_fot_h contact_r snipcss0-2-2-3">
+                    <ul class="contact padding-0 snipcss0-3-3-4">
+                        <li class="li_footer_h snipcss0-4-4-5">
+                            <span class="txt_content_child snipcss0-5-5-6">
+                                <i class="fas fa-map-marker-alt snipcss0-6-6-7">
+                                </i>
+                                Address: Unit 302, 23C Tong Dan, Hoan Kiem, Hanoi
+                                Opening time: 1:30pm - 6pm (Mon - Fri), 9am - 6pm (Sat - Sun), Hà Nội
+                            </span>
+                        </li>
+                        <li class="li_footer_h snipcss0-4-4-8">
+                            <i class="fas fa-mobile-alt snipcss0-5-8-9">
+                            </i>
+                            <a href="tel:0366600908" class="snipcss0-5-8-10">
+                                0366600908
+                            </a>
+                        </li>
+                        <li class="li_footer_h snipcss0-4-4-11">
+                            <i class="far fa-envelope snipcss0-5-11-12">
+                            </i>
+                            <a href="mailto:tiemsachgacxep@gmail.com" class="snipcss0-5-11-13">
+                                tiemsachgacxep@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page-login page_cotact snipcss0-2-2-14">
+                    <h1 class="title-head-contact a-left snipcss0-3-14-15">
+                        <span class="snipcss0-4-15-16">
+                            Liên hệ
+                        </span>
+                    </h1>
+                    <div id="pagelogins" class="snipcss0-3-14-17">
+                        <form method="post" action="/postcontact" id="contact" accept-charset="UTF-8" class="snipcss0-4-17-18">
+                            <input name="FormType" type="hidden" value="contact" class="snipcss0-5-18-19">
+                            <input name="utf8" type="hidden" value="true" class="snipcss0-5-18-20">
+                            <input type="hidden" id="Token-9e40be32929349bc93f6b9da711e0715" name="Token" value="03AFcWeA5ZTnhSx9KZ3MHPlWPy2mRHxm6PUW45GBzOkYEueRv7Yjr1o1po3Qv2x2x7Qo0-aal2BNszimeC1y1lfTivQBryeekVJmauIg2-iiA6JSPvNtxm_hSw0QxK6linfPE4kfMdNtV_krqTi9WQs0MWsjRa-_Lw2WPEGHnyLD5SgPJgfECPugkhxEWjRS17b4iFu01PtHL2tZ1NxYPGLn_FF5YvWFhzy4oHBydGg_BQSr3kOn7Zs6aYFIISDB-meAxfXYOHhF6n0divD0UJGB3EQjkQf1-7PfiqqWhX13Crv7MYYbdijfdjy0ZSo1Xacw_dggEhdx45iJNGvm0-6R7Zc8uW98fCLMuRPetd3kWfWJMB06cSOOOe6JKTeV9mpjIYUA4yY2lmbkRngMtE7vBByxCEthX4n9UwvmBVVFdy0SbdWjfqKDnA5eJpfPsPboaC2xN7lxfq9f881nI5G7dmiHIQBKSuP4_Ck1QTbDeVlIVV98oETGGAGzQNhilcJdHOFcAVDBxgXH0H7pZbrNr2_debeMW1q1xD_2_VSA4fIDO3AH-J_kA" class="snipcss0-5-18-21">
+                            <div class="form-signup clearfix snipcss0-5-18-22">
+                                <div class="row group_contact snipcss0-6-22-23">
+                                    <fieldset class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 snipcss0-7-23-24">
+                                        <input placeholder="Họ và tên" type="text" class="form-control form-control-lg snipcss0-8-24-25" required="" value="" name="contact[Name]">
+                                    </fieldset>
+                                    <fieldset class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 snipcss0-7-23-26">
+                                        <input placeholder="Email" type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,4}$" required="" id="email1" class="form-control form-control-lg snipcss0-8-26-27" value="" name="contact[email]">
+                                    </fieldset>
+                                    <fieldset class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 snipcss0-7-23-28">
+                                        <textarea placeholder="Nội dung" name="contact[body]" id="comment" class="form-control content-area form-control-lg snipcss0-8-28-29" rows="5" required="">
+                    </textarea>
+                                    </fieldset>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 snipcss0-7-23-30">
+                                        <button type="submit" class="btn btn-primary margin-top-20 snipcss0-8-30-31">
+                                            Gửi liên hệ
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="select_maps col-md-8 col-sm-12 col-xs-12 snipcss0-1-1-32">
+                <div class="section_mapss margin-bottom-50 snipcss0-2-32-33">
+                    <div class="box-maps snipcss0-3-33-34">
+                        <div class="iFrameMap snipcss0-4-34-35">
+                            <div class="google-map snipcss0-5-35-36">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.954415962316!2d105.83977271424472!3d20.994464294325653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135adb8fa0ad357%3A0x5dff8ee28b983633!2zR8OhYyBYw6lwIEJvb2tzdG9yZQ!5e0!3m2!1sen!2s!4v1569234351626!5m2!1sen!2s" width="100%" height="450" frameborder="0" allowfullscreen="" class="snipcss0-6-36-37 style-8Ntbm" id="style-8Ntbm">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

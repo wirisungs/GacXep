@@ -1,0 +1,20 @@
+﻿@model GacXep.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+
+<h2 style="text-align: center; font-size: 30px">Chi tiết sách</h2>
+
+<hr />
+
+@Html.Partial("BookInfoPartial", Model)
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

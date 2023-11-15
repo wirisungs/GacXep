@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = Model.Book.ProName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link rel="stylesheet" href="~/Content/assets/css/StyleSheet2.css" />
+@*<link rel="stylesheet" href="~/Content/assets/css/detailscss.css" />*@
+@*<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*@
+@*<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet" />*@
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="book-title">
+                <div class="book-title-items"><a href="~/Home/Index">Trang Chủ /</a></div>
+                <div class="book-title-items"><a href="~/CustomerBooks/Index">All Books /</a></div>
+                <div class="book-title-items">@Model.Book.ProName</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-detail">
+        <div class="container">
+            <div class="row">
+                <div class="img-container">
+                    <div class="surround">
+                        <div class="product-img">
+                            <div class="img-book">
+                                <img src="@Url.Content(Model.Book.ProImage)" class="real-img" />
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                            <div class="book-information-container">
+                                <div class="main-title">
+                                    <h1>@Model.Book.ProName</h1>
+                                </div>
+                                <div class="product-price-review"><p>@String.Format("{0:0,0}", Model.Price) VNĐ</p></div>
+                                <div class="book-subtiles">
+                                    <div class="good-subtile1">
+                                        <div class="product-details-info">
+                                            <div class="details" id="bold">Tác giả</div>
+                                            <div class="details" id="bold">Năm sản xuất</div>
+                                            @*<div class="details" id="bold">Kích thước</div>*@
+                                        </div>
+                                        <div class="product-details-info">
+                                            <div class="details">@Model.Author.AuthorName</div>
+                                            <div class="details">2023</div>
+                                            @*<div class="details">13 X 18 cm</div>*@
+                                        </div>
+                                        <div class="product-details-info" style="padding-left:50px">
+                                            <div class="details" id="bold">Nhà xuất bản</div>
+                                            <div class="details" id="bold">Ngôn ngữ</div>
+                                        </div>
+                                        <div class="product-details-info">
+                                            <div class="details">@Model.Publisher.PubName</div>
+                                            <div class="details">@Model.Language</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-description">
+                                    <div class="box-description-content" id="bold">Nội dung</div>
+                                    <div class="content-script">
+                                        <p>
+                                            @Model.Book.NameDecription
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="selecter-form">
+                                    <div class="custom input_number_product soluong1 show">
+                                        <button class="btn-num-1" onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro ) &amp;&amp; qtypro > 1 ) result.value--;return false;" type="button">-</button>
+                                        <input type="text" id="qtym" name="quantity" value="1" maxlength="2" class="form-control prd_quantity" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="if(this.value == 0)this.value=1;">
+                                        <button class="btn-num-2" onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;" type="button">+</button>
+                                    </div>
+                                    @*<button href="@Url.Action("AddToCart", "Cart", new { id = Model.ProductID })" id="add-to-cart">Thêm vào giỏ</button>*@
+                                    <a href="@Url.Action("AddToCart", "Cart", new { id = Model.ProID})" id="add-to-cart">Thêm vào giỏ</a>
+                                </div>
+                                <div class="catergory-tag">
+                                    <div class="Products-Meta">
+                                        <div class="catergory-new"><p style="font-weight:bold">DANH MỤC:</pstyle="font-weight:bold"><p>@Model.Book.Category.NameCate</p></div>
+                                        <div class="tag" style="font-weight:bold">TAG:</div><p>@Model.Author.AuthorName, @Model.Book.Category.NameCate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

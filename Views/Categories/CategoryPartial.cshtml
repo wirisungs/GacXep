@@ -1,0 +1,10 @@
+﻿@model IEnumerable<GacXep.Models.Category>
+
+<div>
+    <ul class="list-group">
+        @foreach(var item in Model)
+            {
+                @Html.ActionLink(item.NameCate, "GetProductsByCateId", "CustomerBooks", new { id = item.CatID}, new {@class="list-group-item"})
+            }
+    </ul>
+</div>

@@ -1,0 +1,73 @@
+﻿@model GacXep.Models.BookDetail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>QUẢN LÝ KHO HÀNG</h2>
+<h3 style="color:blue">Chi tiết nhập hàng</h3>
+<hr />
+
+<dl>
+       <dt>
+           NHÀ XUẤT BẢN
+       </dt>
+       <dd>
+            @Html.DisplayFor(model => model.Publisher.PubName)
+       </dd>
+        <dt>
+            TÊN SẢN PHẨM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book.ProName)
+        </dd>
+        <dt>
+            TÁC GIẢ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author.AuthorName)
+        </dd>
+
+        <dt>
+            SỐ TRANG
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pages)
+        </dd>
+        <dt>
+            NGÔN NGỮ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+        <dt>
+            ĐƠN GIÁ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            SỐ LƯỢNG TỒN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemainQuantity)
+        </dd>
+
+        <dt>
+            SỐ LƯỢNG ĐÃ BÁN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoldQuantity)
+        </dd>
+</dl>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProDeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

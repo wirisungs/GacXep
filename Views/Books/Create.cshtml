@@ -1,0 +1,83 @@
+﻿@model GacXep.Models.Book
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    textarea {
+        width: 100%;
+        height: 150px;
+        border: 1px ridge;
+        border-radius: 5px;
+        padding: 10px 10px;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+
+
+<style>
+    textarea {
+        width: 100%;
+        height: 150px;
+        border: 1px ridge;
+        border-radius: 5px;
+        padding: 10px 10px;
+    }
+</style>
+
+<h2>QUẢN LÝ THÔNG TIN SẢN PHẨM</h2>
+<h3 style="color:blue">Thêm sản phẩm</h3>
+<hr />
+
+@using (Html.BeginForm("Create", "Books", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="control-label col-sm-2">TÊN SẢN PHẢM</div>
+            <div class="col-sm-10">
+                @Html.EditorFor(model => model.ProName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-sm-2">NHÓM SẢN PHẢM</div>
+            <div class="col-sm-10">
+                @Html.DropDownList("CatID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CatID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-sm-2">HÌNH ẢNH</div>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.UploadImage, htmlAttributes: new { @type = "file" })
+                @Html.ValidationMessageFor(model => model.UploadImage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-sm-2">MÔ TẢ</div>
+            <div class="col-sm-10">
+                @Html.TextAreaFor(model => model.NameDecription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NameDecription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Thêm mới" class="btn btn-primary" />
+                @Html.ActionLink("Danh sách", "Index", null, new { @class = "btn btn-info" })
+            </div>
+        </div>
+    </div>
+}
+

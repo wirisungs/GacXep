@@ -1,0 +1,33 @@
+﻿@model GacXep.Models.Book
+
+<style>
+    .ProImg {
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+
+    img {
+        opacity: 0.99;
+        vertical-align: middle;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-4" style="border: 1px solid gray; border-radius: 10px; background-color: whitesmoke">
+        <img class="ProImg" src="@Url.Content(Model.ProImage)"/>
+    </div>
+
+    <div class="col-md-8" style="padding: 10px 30px;">
+        <h1>@Html.DisplayFor(model => model.ProName)</h1>
+        <h4>TÓM TẮT</h4>
+        <p>@Html.DisplayFor(model => model.NameDecription)</p>
+        <h4>THỂ LOẠI</h4>
+        <p>@Html.DisplayFor(model => model.Category.NameCate)</p>
+    </div>
+</div>

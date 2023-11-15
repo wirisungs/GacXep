@@ -1,0 +1,40 @@
+﻿@using GacXep.Models
+
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Customer customer = Session["TaiKhoan"] as Customer;
+}
+
+<div style="margin: 10px auto; width: 70%">
+    <h2 style="text-align: center">Thông tin tài khoản</h2>
+    <p>
+        @Html.ActionLink("Chỉnh sửa", "Edit", null, new { @class = "btn btn-primary"})
+    </p>
+
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                <strong>Họ và tên:</strong>
+            </dt>
+            <dd>
+                @customer.CusName
+            </dd>
+            <dt>
+                <strong>Email liên lạc:</strong>
+            </dt>
+            <dd>
+                @customer.CusEmail
+            </dd>
+            <dt>
+                <strong>Số điện thoại:</strong>
+            </dt>
+            <dd>
+                @customer.CusPhone
+            </dd>
+        </dl>
+    </div>
+</div>
+
+

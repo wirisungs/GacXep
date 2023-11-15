@@ -1,0 +1,64 @@
+﻿@using GacXep.Models
+@model List<CartItem>
+
+    @{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <div style="margin: 10px auto; width: 70%;">
+        <h2 style="text-align: center">THÔNG TIN GIỎ HÀNG</h2>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>MÃ SÁCH</th>
+                    <th>TÊN</th>
+                    <th>ẢNH</th>
+                    <th>SỐ LƯỢNG</th>
+                    <th>ĐƠN GIÁ</th>
+                    <th>THÀNH TIỀN</th>
+                    <th>CHI TIẾT</th>
+                    <th>CẬP NHẬT</th>
+                    <th>XOÁ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                <tr>
+                    <td>@product.ProID</td>
+                    <td>@product.ProName</td>
+                    <td><img src="@Url.Content(product.ProImage)" style="width: 100px" /></td>
+                    @using (Html.BeginForm("UpdateCartItem", "Cart", new { id = product.ProID }))
+                    {
+                    <td>
+                        <input type="number" min="1" value="@product.Quantity" name="Quantity" />
+                    </td>
+                    }
+                    <td>@product.Price</td>
+                    <td>@product.FinalPrice()</td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", "CustomerBooks", new { id = product.ProID }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Update", "UpdateCartItem", "Cart", new { id = product.ProID }, new { @class = "btn btn-primary" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "DeleteCartItem", "Cart", new { id = product.ProID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+                }
+                <tr style="font-weight:bold; text-align:right; color:red;">
+                    <td colspan="5">Tổng số lượng: @ViewBag.TotalNumber</td>
+                    <td colspan="1">Tổng tiền: @ViewBag.TotalPrice</td>
+                </tr>
+                <tr style="font-weight:bold; text-align:center;">
+                    <td colspan="9">
+                        @Html.ActionLink("Đặt hàng", "ConfirmCart", null, new { @class = "btn btn-primary" })
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
